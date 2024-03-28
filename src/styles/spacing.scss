@@ -1,0 +1,18 @@
+$sides: (
+    'top': 't-a',
+    'right': 'r-a',
+    'bottom': 'b-a',
+    'left': 'l-a',
+);
+
+@each $side, $letter in $sides {
+    @for $per from 1 through 10 {
+        .m#{$letter}-#{$per} {
+            margin-#{$side}: percentage($per * 0.1) !important;
+        }
+
+        .p#{$letter}-#{$per} {
+            margin-#{$side}: percentage($per * 0.1) !important;
+        }
+    }
+}
