@@ -12,9 +12,5 @@ import AppLayout from '@/components/AppLayout.vue';
 import { useThemeStore } from '@/store/theme';
 import '@/styles/style.scss';
 
-// window.onbeforeunload = function () {
-//     return 'Do you really want to leave this page?';
-// };
-
 useThemeStore().initTheme();
 </script>
