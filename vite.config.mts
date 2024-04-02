@@ -3,14 +3,9 @@ import { defineConfig } from 'vite';
 import vuetify from 'vite-plugin-vuetify';
 
 export default defineConfig({
-    plugins: [
-        vue(),
-        vuetify(),
-    ],
+    plugins: [vue(), vuetify()],
     resolve: {
-        alias: [
-            { find: '@', replacement: '/src' },
-        ],
+        alias: [{ find: '@', replacement: '/src' }],
     },
     test: {
         globals: true,
@@ -19,4 +14,5 @@ export default defineConfig({
             inline: ['vuetify'],
         },
     },
+    base: '/vue-checkdeli/',
 });
