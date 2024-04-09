@@ -1,9 +1,11 @@
 <template>
-    <article>
+    <v-sheet tag="article">
         <div class="d-flex ga-4">
             <div class="content-center">
                 <v-avatar color="surface-variant">
-                    <span class="text-h6 text-uppercase">{{ avatar }}</span>
+                    <span class="text-h6 text-uppercase disable-user-select">
+                        {{ avatar }}
+                    </span>
                 </v-avatar>
             </div>
             <div class="d-flex flex-1-1">
@@ -22,7 +24,7 @@
                 />
             </div>
         </div>
-    </article>
+    </v-sheet>
 </template>
 
 <script setup lang="ts">

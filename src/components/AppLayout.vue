@@ -1,11 +1,19 @@
 <template>
     <v-app>
-        <slot name="header" />
-        <main class="flex-1-1">
-            <v-container class="h-100">
-                <router-view />
-            </v-container>
-        </main>
+        <v-layout>
+            <v-app-bar
+                class="bg-background"
+                elevation="0"
+                density="default"
+            >
+                <slot name="header" />
+            </v-app-bar>
+            <v-main>
+                <v-container class="h-100">
+                    <router-view />
+                </v-container>
+            </v-main>
+        </v-layout>
     </v-app>
 </template>
 

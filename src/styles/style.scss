@@ -35,16 +35,6 @@ html {
    align-items: center;
 }
 
-.wrapper-enter-active,
-.wrapper-leave-active {
-   transition: all 0.2s ease;
-}
-.wrapper-enter-from,
-.wrapper-leave-to {
-   opacity: 0;
-   transform: translateX(20px);
-}
-
 .text-body-1,
 .text-body-2,
 .text-h1,

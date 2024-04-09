@@ -1,5 +1,5 @@
 <template>
-    <article>
+    <v-sheet tag="article">
         <div class="d-flex flex-column ga-3">
             <div class="d-flex ga-4">
                 <div class="w-50">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="w-50">
                     <v-text-field
-                        v-model="product.price"
+                        v-model.number="product.price"
                         variant="filled"
                         type="number"
                         hide-details="auto"
@@ -36,12 +36,12 @@
                                 </v-btn>
                             </template>
                             <template v-slot:default="{ isActive }">
-                                <app-sheet>
+                                <app-sheet class="disable-user-select">
                                     <div class="mb-4">
-                                        <div class="text-h5 text-center">
+                                        <div class="text-h6 mb-2">
                                             Изменить плательщика
                                         </div>
-                                        <div class="text-center">Кто платил за это?</div>
+                                        <div class="text-body-2">Кто платил за это?</div>
                                     </div>
                                     <div class="d-flex flex-column ga-4">
                                         <v-radio-group
@@ -53,7 +53,6 @@
                                                 :key="user.id"
                                                 :value="user"
                                                 :label="user.name"
-                                                class="justify-center mr-2"
                                                 @click="isActive.value = false"
                                             />
                                         </v-radio-group>
@@ -86,7 +85,7 @@
                     </div>
                 </div>
             </v-sheet>
-            <div class="d-flex ga-3">
+            <div class="d-flex ga-3 flex-wrap">
                 <user-preview
                     :product="product"
                     @click="selectAllUsers"
@@ -101,7 +100,7 @@
                 />
             </div>
         </div>
-    </article>
+    </v-sheet>
 </template>
 
 <script setup lang="ts">

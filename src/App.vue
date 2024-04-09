@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import AppHeader from '@/components/AppHeader.vue';
 import AppLayout from '@/components/AppLayout.vue';
-import { useThemeStore } from '@/store/theme';
+import { useThemeStore } from '@/store/themeStore';
 import '@/styles/style.scss';
 
 useThemeStore().initTheme();

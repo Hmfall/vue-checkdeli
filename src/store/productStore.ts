@@ -48,7 +48,7 @@ export const useProductStore = defineStore('product', {
 
             this.products.splice(index, 1, {
                 ...product,
-                price: product.price && parseInt(product.price.toString()),
+                price: product.price,
             });
         },
         copy(id: number) {
