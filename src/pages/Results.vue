@@ -60,16 +60,15 @@
             </div>
         </app-sheet>
         <div>
-            <router-link to="/">
-                <v-btn
-                    color="primary"
-                    rounded="xl"
-                    variant="tonal"
-                    class="w-100"
-                >
-                    Вернуться домой
-                </v-btn>
-            </router-link>
+            <v-btn
+                color="primary"
+                rounded="xl"
+                variant="tonal"
+                class="w-100"
+                @click="handleReset"
+            >
+                Вернуться домой
+            </v-btn>
         </div>
     </section>
 </template>
@@ -79,13 +78,24 @@ import { onBeforeMount, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import AppSheet from '@/components/AppSheet.vue';
 import { useBillStore } from '@/store/billStore';
+import { useProductStore } from '@/store/productStore';
+import { useUserStore } from '@/store/userStore';
 
 const router = useRouter();
 const billStore = useBillStore();
+const userStore = useUserStore();
+const productStore = useProductStore();
+
+const tab = ref('byDebtor');
 
 onBeforeMount(() => !billStore.bill.length && router.push('/users'));
 
 billStore.calculateNormalizedBill();
 
-const tab = ref('byDebtor');
+const handleReset = () => {
+    router.push('/');
+    userStore.users = [];
+    productStore.products = [];
+    billStore.bill = [];
+};
 </script>
